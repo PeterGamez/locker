@@ -1,0 +1,10 @@
+DirectoryIndex index.php # หน้า index ของเว็บไซต์
+
+# เปิดใช้งาน mod_rewrite
+RewriteEngine on
+RewriteBase /
+
+# ไปยังหน้า index.php เพื่อใช้ router ทุกครั้ง
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php [L]
